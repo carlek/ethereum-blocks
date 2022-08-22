@@ -5,7 +5,7 @@ import pytz
 import httpx
 import click
 
-etherscan_api_key = "IWTS5H9QSA8Z8RT6W7AKNU7MWBI5KIHDU8"
+etherscan_api_key = "valid api key from etherscan.io"
 etherscan_url = f"https://api.etherscan.io/api?module=block&action=getblocknobytime" \
                 f"&closest=before&apikey={etherscan_api_key}"
 
