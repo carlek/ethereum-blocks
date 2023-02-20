@@ -29,8 +29,8 @@ async def get_block_async(start: str, end: str) -> list[str]:
                     raise ApiError(status_code=400, error_msg=error)
             data = resp.json()
             block = GetBlockResponse(status=data['status'], message=data['message'], result=data['result'])
+            etherscan_cache.set_cache(utc_date, block)
 
-        etherscan_cache.set_cache(utc_date, block)
         result_list.append(f"{utc_date.strftime('%Y-%m-%d')} {block.result}")
         utc_date = utc_date + relativedelta(days=1)
     return result_list

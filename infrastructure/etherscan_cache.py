@@ -5,10 +5,7 @@ __cache = {}
 
 def get_cache(date: datetime) -> Optional[GetBlockResponse]:
     block: GetBlockResponse = __cache.get(date)
-    if not block:
-        return None
-    return block
-
+    return None if not block else block
 
 def set_cache(date: datetime, block: GetBlockResponse):
     __cache[date] = block
