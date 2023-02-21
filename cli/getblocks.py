@@ -32,8 +32,8 @@ def get_blocks(utc_start_date: datetime, utc_end_date: datetime) -> list[str]:
     return res
 
 @click.command()
-@click.option('--start-date', type=str, default='2021-12-30', help='Start date in YYYY-MM-DD')
-@click.option('--end-date', type=str, default='2021-12-31', help='End date in YYYY-MM-DD')
+@click.option('--start-date', type=str, default='2021-12-30', help='Start date =YYYY-MM-DD')
+@click.option('--end-date', type=str, default='2021-12-31', help='End date =YYYY-MM-DD')
 def get_blocks_cmd(start_date: str, end_date: str, time: tuple = (23, 59, 59, 0)):
     """ Simple program that prints last block id for date range (inclusive) """
     (hour, minute, second, millisecond) = time
