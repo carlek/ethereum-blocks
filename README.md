@@ -12,6 +12,7 @@ A simple wrapper on etherscan.io to extract daily block data from Ethereum.
 
 usage:
 ```
+% # export PYTHONPATH=.:$PYTHONPATH  # to ensure imports work 
 % python ethereum-blocks/main.py
 
 % curl -X 'GET' \
@@ -35,7 +36,8 @@ ethereum-blocks/cli/getblocks.py
 ```
 Usage:
 ```
-getblocks.py [OPTIONS]
+% # export PYTHONPATH=.:$PYTHONPATH  # to ensure imports work 
+% getblocks.py [OPTIONS]
 
   Simple program that prints last block id for date range (inclusive)
 

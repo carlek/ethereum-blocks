@@ -1,12 +1,11 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from pydantic import BaseModel
 from classes.etherscan import EtherscanError, GetBlockResponse
 import pytz
 import httpx
 import click
 
-etherscan_api_key =  "valid api key from etherscan.io"
+etherscan_api_key = "valid api key from etherscan.io"
 etherscan_url = f"https://api.etherscan.io/api?module=block&action=getblocknobytime" \
                 f"&closest=before&apikey={etherscan_api_key}"
 
