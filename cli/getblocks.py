@@ -1,12 +1,12 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from classes.etherscan import GetBlockResponse
-from classes.etherscan import EtherscanError
+from pydantic import BaseModel
+from classes.etherscan import EtherscanError, GetBlockResponse
 import pytz
 import httpx
 import click
 
-etherscan_api_key = "valid api key from etherscan.io"
+etherscan_api_key =  "valid api key from etherscan.io"
 etherscan_url = f"https://api.etherscan.io/api?module=block&action=getblocknobytime" \
                 f"&closest=before&apikey={etherscan_api_key}"
 
@@ -23,6 +23,7 @@ def call_etherscan_getblock(url: str) -> GetBlockResponse:
 
 def get_blocks(utc_start_date: datetime, utc_end_date: datetime) -> list[str]:
     utc_date = utc_start_date
+    print(utc_start_date, utc_end_date)
     res: list[str] = []
     while utc_date <= utc_end_date:
         timestamp = int(utc_date.timestamp())
