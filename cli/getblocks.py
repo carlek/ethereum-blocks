@@ -22,7 +22,7 @@ def call_etherscan_getblock(url: str) -> GetBlockResponse:
 
 def get_blocks(utc_start_date: datetime, utc_end_date: datetime) -> list[str]:
     utc_date = utc_start_date
-    print(utc_start_date, utc_end_date)
+    print(f"utc_start_date={utc_start_date}, utc_end_date={utc_end_date}")
     res: list[str] = []
     while utc_date <= utc_end_date:
         timestamp = int(utc_date.timestamp())
